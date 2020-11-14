@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // get the biggest element of an array:
+
+        function getMaxElement(sampleArray) {
+            let biggestElement = sampleArray[0];
+            for (let i=0; i < sampleArray.length; i += 1) {
+                if (sampleArray[i] > biggestElement) {
+                    biggestElement = sampleArray[i];
+                }
+            } 
+            return biggestElement;
+        }
+        const sampleArray = [3, 6, 2, 1, 4, 8, 5];
+        let biggestElement = getMaxElement(sampleArray);
+        console.log(biggestElement);
+
+    </script>
+
+</body>
+</html>

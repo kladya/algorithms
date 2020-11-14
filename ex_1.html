@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // get the smallest element of an array:
+        
+        function getMinElement(sampleArray) {
+            let smallestElement = sampleArray[0];
+            for (let i=0; i < sampleArray.length; i += 1) {
+                if (sampleArray[i] < smallestElement) {
+                    smallestElement = sampleArray[i];
+                }
+            } 
+            return smallestElement;
+        }
+        const sampleArray = [3, 2, 1, 4, 5, 6];
+        let smallestElement = getMinElement(sampleArray);
+        console.log(smallestElement);
+
+    </script>
+
+</body>
+</html>
