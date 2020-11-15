@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // get the second smallest element in array:
+        
+        // with .sort method:
+
+        const sampleArray = [6, 9, 7, 3, 8, 4, 10, 5];
+
+        function sortFunction(a, b) {
+            return a - b;
+        }
+
+        let sampleArraySorted = sampleArray.sort(sortFunction);
+        console.log(sampleArraySorted);
+
+        function getSecondMinElement(sampleArraySorted) {
+            let secondMinElement = sampleArraySorted[1];
+            return secondMinElement;
+        }
+
+        let secondMinElement = getSecondMinElement(sampleArraySorted);
+        console.log(secondMinElement);
+
+    </script>
+
+</body>
+</html>

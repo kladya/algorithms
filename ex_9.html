@@ -12,6 +12,115 @@
     <script>
         'use strict';
 
+        // check with logarithmic /binary/ search if array contains the element '23':
+
+        const sampleArray = [34, 23, 67, 128, 1, 87, 95];
+
+        sampleArray.sort(function(a, b) {
+                return a - b;
+            });
+
+        function binarySearch(sampleArray, item) {
+            let start = 0;
+            let end = sampleArray.length - 1;
+            let mid;
+            let contain = 'no';
+
+            while (start <= end) {
+                mid = Math.floor((start + end) / 2);
+
+                if (sampleArray[mid] === item) {
+                    return contain = 'yes';
+                } else if (sampleArray[mid] < item) {
+                    start = mid + 1;
+                } else {
+                    end = mid -1;
+                }
+            }
+            return contain;
+        }
+
+        let item = 23;
+        let contain = binarySearch(sampleArray, item);
+        console.log(contain);
+
+
+
+
+        /* Binary Search (Half-Interval Search) is a Search Algorithm to find a specific 
+        element located in an Array (ONLY works with Sorted Arrays). Binary Search is 
+        advantageous over a standard Linear Search because it searches faster and more 
+        efficiently due to what some developers call as “Dividing and Conquering.”
+        Instead of searching an array at index 0, 1, 2, 3, 4, and so on like we do in 
+        a For Loop, Binary Search allows us to divide our search in half each time we 
+        look for a target value.
+        We define a middleIndex or midpoint from the element in the middle of the array 
+        (Divide) to see if our target value is greater than or less than the 
+        middleIndex or midpoint. Depending on if the target value is greater than or 
+        less than the middleIndex, we can remove the left or right of our array from 
+        our search (Conquer). */
+
+
+
+
+
+        /* 
+        BASE CONDITION: If starting index is greater than ending index return false.
+        Compute the middle index.
+        Compare the middle element with number x. If equal return true.
+        If greater, call the same function with ending index = middle-1 and repeat step 1.
+        If smaller, call the same function with starting index = middle+1 and repeat step 1.
+
+
+
+
+
+        // Base Condition 
+        if (start > end) return false; 
+    
+        // Find the middle index 
+        let mid=Math.floor((start + end)/2); 
+    
+        // Compare mid with given key x 
+        if (arr[mid]===x) return true; 
+            
+        // If element at mid is greater than x, 
+        // search in the left half of mid 
+        if(arr[mid] > x)  
+            return recursiveFunction(arr, x, start, mid-1); 
+        else
+    
+        // If element at mid is smaller than x, 
+        // search in the right half of mid 
+        return recursiveFunction(arr, x, mid+1, end); 
+
+
+
+
+
+        // Iterative function to implement Binary Search 
+        let iterativeFunction = function (arr, x) { 
+        
+            let start=0, end=arr.length-1; 
+                    
+            // Iterate while start not meets end 
+            while (start<=end){ 
+    
+                // Find the mid index 
+                let mid=Math.floor((start + end)/2); 
+        
+                // If element is present at mid, return True 
+                if (arr[mid]===x) return true; 
+        
+                // Else look in left or right half accordingly 
+                else if (arr[mid] < x)  
+                    start = mid + 1; 
+                else
+                    end = mid - 1; 
+            } 
+            return false; 
+        } 
+        */
         
 
     </script>

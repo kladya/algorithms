@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // get nth largest element from an unsorted array:
+
+        const sampleArray = [6, 9, 7, 3, 8, 4, 10, 5];
+
+        function nthlargest(arra,highest){
+            let x = 0;
+            let y = 0;
+            let z = 0;
+            let temp = 0;
+            const tnum = arra.length;
+            let flag = false;
+            let result = false;
+
+            while(x < tnum){
+                y = x + 1; 
+                
+                if(y < tnum){
+                    for(z = y; z < tnum; z++){
+                        
+                        if(arra[x] < arra[z]){
+                            temp = arra[z];
+                            arra[z] = arra[x];
+                            arra[x] = temp;
+                            flag = true; 
+                        }else{
+                            continue;
+                        }	
+                    }					
+                }
+                
+                if(flag){
+                    flag = false;
+                }else{
+                    x++; 
+                    if(x === highest){ 
+                    
+                        result = true;
+                    }	
+                }
+                if(result){
+                    break;
+                }
+            }
+
+            return (arra[(highest - 1)]);
+        }
+                
+        console.log(nthlargest(sampleArray, 3));
+        
+    </script>
+
+</body>
+</html>

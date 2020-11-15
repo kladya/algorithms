@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // get the third largest element in array:
+
+        // with .sort method:
+
+        const sampleArray = [6, 9, 7, 3, 8, 4, 10, 5];
+
+        function reverseSortFunction(a, b) {
+            return b - a;
+        }
+
+        let sampleArrayReverseSorted = sampleArray.sort(reverseSortFunction);
+        console.log(sampleArrayReverseSorted);
+
+        function getThirdMaxElement(sampleArrayReverseSorted) {
+            let thirdMaxElement = sampleArrayReverseSorted[2];
+            return thirdMaxElement;
+        }
+
+        let thirdMaxElement = getThirdMaxElement(sampleArrayReverseSorted);
+        console.log(thirdMaxElement);
+        
+    </script>
+
+</body>
+</html>

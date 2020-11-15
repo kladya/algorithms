@@ -12,7 +12,22 @@
     <script>
         'use strict';
 
+        // get the number of even number elemnents:
+
+        const sampleArray = [1, 2, 3, 5, 6, 8, 10];
+
+        function evenNumberFunction(sampleArray) {
+            let numberOfEvenElements = 0;
+            for (let i=0; i < sampleArray.length; i+=1) {
+                if (sampleArray[i] % 2 == 0) {
+                    numberOfEvenElements += 1;
+                }
+            }
+            return numberOfEvenElements;
+        }
         
+        let numberOfEvenElements = evenNumberFunction(sampleArray);
+        console.log(numberOfEvenElements);
 
     </script>
 

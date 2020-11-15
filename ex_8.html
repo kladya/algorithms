@@ -12,7 +12,26 @@
     <script>
         'use strict';
 
-        
+        // check with linear search if array contains the element '23':
+
+        const sampleArray = [2, 'door', 85, -236, 0, '45', 23, 'Joe'];
+
+        function linearSearch(sampleArray, item) {
+            let contain = 'no'
+            for (let i=0; i < sampleArray.length; i += 1) {
+                if (sampleArray[i] === item) {
+                    contain = 'yes';
+                }
+            }
+            return contain;
+        }
+
+        let item = 23;
+        let contain = linearSearch(sampleArray, item);
+        console.log(contain);
+
+
+        // linear search: it compares each element one by one
 
     </script>
 

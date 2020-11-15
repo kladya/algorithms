@@ -12,7 +12,23 @@
     <script>
         'use strict';
 
-        
+        // count number of times the element '23' appears in array:
+
+        const sampleArray = [2, 'door', 23, 23,  85, 2, -236, 0, '45', 23, 'Joe'];
+
+        function countInArray(sampleArray, item) {
+            let count = 0;
+            for (let i = 0; i < sampleArray.length; i += 1) {
+                if (sampleArray[i] === item) {
+                    count += 1;
+                } 
+            }
+            return count;
+        }
+
+        let item = 23;
+        let count = countInArray(sampleArray, item);
+        console.log(count);
 
     </script>
 

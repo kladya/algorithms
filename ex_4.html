@@ -12,7 +12,20 @@
     <script>
         'use strict';
 
+        // get the sum of elements:
+
+        const sampleArray = [1, 2, 3, 4, 5];
         
+        function sumFunction(sampleArray) {
+            let totalSum = 0;
+            for (let i=0; i < sampleArray.length; i += 1) {
+                totalSum += sampleArray[i];
+            }
+            return totalSum;
+        }
+
+        let totalSum = sumFunction(sampleArray);
+        console.log(totalSum);
 
     </script>
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // get the third largest element in array:
+
+        //from an unsorted array:
+
+        const sampleArray = [6, 9, 7, 3, 8, 4, 10, 5];
+
+        function getThirdMaxElement(sampleArray) {
+            let maxElement = sampleArray[0];
+            let indexMaxElement = 0;
+            for (let i = 1; i < sampleArray.length; i += 1) {
+                if (maxElement < sampleArray[i]) {
+                    maxElement = sampleArray[i];
+                    indexMaxElement = i;
+                }
+            }
+
+            let secondMaxElement = sampleArray[0];
+            let indexSecondMaxElement = 0;
+            for (let i=0; i < sampleArray.length; i += 1) {
+                if ((secondMaxElement < sampleArray[i]) && (i != indexMaxElement)) {
+                    secondMaxElement = sampleArray[i];
+                    indexSecondMaxElement = i;
+                }
+            }
+            
+            let thirdMaxElement = sampleArray[0];
+            for (let i=0; i < sampleArray.length; i+=1) {
+                if ((thirdMaxElement < sampleArray[i]) && (i != indexMaxElement) && (i != indexSecondMaxElement)) {
+                    thirdMaxElement = sampleArray[i];
+                }
+            }
+            return thirdMaxElement;
+        }
+
+        let thirdMaxElement = getThirdMaxElement(sampleArray);
+        console.log(thirdMaxElement);
+        
+    </script>
+
+</body>
+</html>
