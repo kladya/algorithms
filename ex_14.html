@@ -12,7 +12,32 @@
     <script>
         'use strict';
 
-        
+        /* 14. Adott egy tömb, mely azonos darabú egész számot, 
+        és szöveget tartalmaz véletlenszerű sorrendben. Rendezzük 
+        úgy a tömböt, hogy minden szám után egy string következzen! 
+        Írasd ki a rendezett tömböt! */
+
+        const sampleArray = ['John', 624, 67, 'table', '10', 400, 1, '243']        
+
+        function customSort(sampleArray) {
+            const numbers = [];
+            const strings = [];
+            const sortedArray = [];
+            for (let i = 0; i < sampleArray.length; i += 1) {
+                if (typeof sampleArray[i] === 'number') {
+                    numbers.push(sampleArray[i]);
+                } else {
+                    strings.push(sampleArray[i]);
+                }
+            }
+            for (let i = 0; i < numbers.length; i += 1) {
+                sortedArray.push(numbers[i]);
+                sortedArray.push(strings[i]);
+            }
+            return sortedArray;
+        }
+
+        console.log(customSort(sampleArray));
 
     </script>
 

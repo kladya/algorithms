@@ -12,7 +12,38 @@
     <script>
         'use strict';
 
-        
+        /* 15. Adott egy tetszőleges pozitív egész számokat tartalmazó
+        tömb. Válogassuk szét külön egy even (páros), és odd 
+        (páratlan) nevezetű tömbbe a páros, és páratlan számokat! 
+        Írjuk ki a 2 tömböt! */
+
+        const sampleArray = [3, 2, 1, 4, 5, 6];
+
+        function filterByEvenNumbers(sampleArray) {
+            const even = [];
+            for (let i = 0; i < sampleArray.length; i += 1) {
+                if (sampleArray[i] % 2 == 0) {
+                    even.push(sampleArray[i]);
+                }
+            }
+            return even; 
+        }
+
+        let even = filterByEvenNumbers(sampleArray);
+        console.log(even);
+
+        function filterByOddNumbers(sampleArray) {
+            const odd = [];
+            for (let i = 0; i < sampleArray.length; i += 1) {
+                if (sampleArray[i] % 2 == 1) {
+                    odd.push(sampleArray[i]);
+                }
+            }
+            return odd;
+        }
+
+        let odd = filterByOddNumbers(sampleArray);
+        console.log(odd);
 
     </script>
 

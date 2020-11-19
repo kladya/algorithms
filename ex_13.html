@@ -12,7 +12,35 @@
     <script>
         'use strict';
 
-        
+        /* 13. Adott egy tetszőleges elemszámú, csak egész számokat 
+        tartalmazó tömb. A tömb elemeit rendezzük növekvő sorrendbe. 
+        Ezután a felhasználótól kérjünk be egy számot (addig kérjünk 
+        be értéket, míg valóban egy véges egész számot ad meg). A 
+        számot szúrjuk be a tömbbe úgy, hogy a tömb továbbra is 
+        rendezett maradjon, tehát a megfelelő indexű helyre kerüljön 
+        be a plusz elem. Írasd ki a rendezett tömböt! */
+
+        const sampleArray = [6, 9, 3, 8, 4, 10, 5];
+
+        function sortFunction(a, b) {
+            return a - b;
+        }
+
+        let sortedArray = sampleArray.sort(sortFunction);
+        console.log(sortedArray);
+
+        function getIndex(sortedArray, x) {
+            for (let i=0; i < sortedArray.length; i += 1) {
+                if (sortedArray[i] > x) {
+                    return i;
+                } 
+            }
+        }
+    
+        let x = 7;
+        let index = getIndex(sortedArray, x);
+        sortedArray.splice(index, 0, x);
+        console.log(sortedArray);
 
     </script>
 

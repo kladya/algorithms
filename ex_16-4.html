@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        /* 16. Adott két azonos elemszámú, csak egész számokat tartalmazó
+        tömb. Külön tömbökbe készítsük el a két tömb: metszetét, 
+        unióját, különbségét, és Descartes szorzatát. Írassuk ki az 
+        új tömböket! */
+
+        // Descartes szorzat:
+
+        const arr1 = [1, 2, 3];
+        const arr2 = [3, 4, 5];
+
+        function descartes(arr1, arr2) {
+            let result4 = [];
+            for (let i = 0; i < arr1.length; i += 1) {
+                for (let j = 0; j < arr2.length; j += 1) {
+                    result4.push('['+ arr1[i] + ',' + arr2[j] + ']');
+                }
+            }
+            return result4;
+        }
+        
+        let result4 = descartes(arr1, arr2);
+        console.log(result4); 
+
+    </script>
+
+</body>
+</html>

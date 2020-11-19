@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        /* 16. Adott két azonos elemszámú, csak egész számokat tartalmazó
+        tömb. Külön tömbökbe készítsük el a két tömb: metszetét, 
+        unióját, különbségét, és Descartes szorzatát. Írassuk ki az 
+        új tömböket! */
+
+        // unió (union):
+
+        const arr1 = [10, 40, 50, 70, 80, 100, 120];
+        const arr2 = [10, 20, 30, 60, 80, 90, 100];
+
+        function union(arr1, arr2) {
+            let result2 = [];
+            let temp = [];
+            for (let i = 0; i < arr1.length; i += 1) {
+                temp[arr1[i]] = true;
+            }
+            for (let j = 0; j < arr2.length; j += 1) {
+                temp[arr2[j]] = true;
+            }
+            for (let x in temp) {
+                result2.push(parseInt(x));
+            }
+            return result2;
+        }
+
+        let result2 = union(arr1, arr2);
+        console.log(result2);
+
+    </script>
+
+</body>
+</html>

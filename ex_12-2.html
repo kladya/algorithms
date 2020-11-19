@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        // sort elements into decreasing /descending/ order with advanced bubblesort 
+        // and move the not number elements to the end of array:
+
+        const sampleArray = ['John', 5, 624, 67, 'table', '10', 400, 1];
+
+        function bubbleSortDesc(numbers) {
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 0; i < numbers.length - 1; i += 1) {
+                    if (numbers[i] < numbers[i + 1]) {
+                        let temp = numbers[i];
+                        numbers[i] = numbers[i + 1];
+                        numbers[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+            return numbers;
+        }
+
+        function sortV2(sampleArray) {
+            const numbers = [];
+            const notNumbers = [];
+            for (let i = 0; i < sampleArray.length; i += 1) {
+                if (typeof sampleArray[i] !== 'number' || Number.isNaN(sampleArray[i])) {
+                    notNumbers.push(sampleArray[i]);
+                } else {
+                    numbers.push(sampleArray[i]);
+                }
+            }
+            const sortedArray = bubbleSortDesc(numbers);
+            return sortedArray.concat(notNumbers);
+        }
+
+        console.log(sortV2(sampleArray));
+
+    </script>
+
+</body>
+</html>
