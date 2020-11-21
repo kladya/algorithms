@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        /* Írd ki (igen vagy nem), hogy egy tetszőleges elemszámú,
+        csak egész számokat tartalmazó tömb tartalmazza-e a 23-as
+        számot! Használj logaritmikus/bináris/ keresést!
+        Nézz utána mi az, milyen feltételei vannak, és hogyan
+        valósítható meg! */
+
+        // csak rendezett tömb esetén használható, azaz előtte
+        // növekvő sorrendbe kell rendezni a tömböt (bubblesorttal)!
+
+        // mindig felezi a tömböt, ezáltal gazdaságosabbá teszi a
+        // keresést
+
+        /* 1. végigjárjuk a tömböt start to end (amíg start <= end)
+        2. megnézzük, hogy a tömb középső eleme egyenlő-e a
+        keresett elemmel?
+        3. ha igen, akkor "igen"/true a válasz
+        4. ha nem, akkor megnézzük, hogy a középső elem kisebb-e
+        vagy nagyobb, mint a keresett elem
+        5. ha kisebb, akkor a tömb 2. felében folytatjuk 
+        csak tovább a keresést
+        6. ha nagyobb, akkor pedig csak a tömb 1. felében keres
+        7. addig zajlik a keresés, amíg meg nem találja a keresett
+        számot, vagy már nem tudja tovább felezni a tömböt */
+
+
+        function binarySearch(arr, search) {
+            let start = 0;
+            let end = arr.length - 1;
+            while (start <= end) {
+                let mid = Math.floor((start + end) / 2);
+                if (arr[mid] === search) {
+                    return true;
+                } else if (arr[mid] < search) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+            return false;
+        }
+
+        const arr = [1, 2, 3, 4, 5, 6];
+        const sortedArray = bubbleSort(arr);
+        console.log(binarySearch(sortedArray, 23));
+
+    </script>
+
+</body>
+</html>

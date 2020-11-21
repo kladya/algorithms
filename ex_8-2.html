@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        'use strict';
+
+        /* Írd ki (igen vagy nem), hogy egy tetszőleges elemszámú, 
+        bármilyen típusú elemeket tartalmazó tömb (feltételezzük,
+        hogy beágyazott tömböt, objektumot, egyéb iterálható
+        elemet nem tartalmaz) tartalmazza-e a 23-as számot!
+        Használj lineáris keresést!  */
+
+        function linearSearch(arr, search) {
+            for (let i=0; i < arr.length; i += 1) {
+                if (arr[i] === search) {
+                    return 'igen';
+                }
+            }
+            return 'nem';
+        }
+
+    </script>
+
+</body>
+</html>

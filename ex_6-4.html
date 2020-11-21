@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Ha fel szeretnék használni egy korábbi fgv-t egy másik js 
+    fájlból, akkor a html fájlban a body végén a <script> tagek közé
+    mindkét js fájlt felvehetem!
+
+    pl.:
+    <script src="../js/sort.js"></script>
+    <script src="second-smallest.js"></script>
+    -->
+    
+
+    <script>
+        'use strict';
+
+        /* Írasd ki egy tetszőleges elemszámú, csak egész számokat
+        tartalmazó tömb második legkisebb elemét!
+
+        Version-2: készítünk egy fgv-t arra, hogy a bárhányadik 
+        legkisebb elemet ki tudjuk választani. Ehhez a már létező 
+        advanced bubblesort függvényünkkel növekvő sorrendbe 
+        rendezzük a tömböt. */
+
+        const arr = [1, 2, 3, 4, 5];
+        
+        function getNthSmallestElementFromAnArray(arr, nth) {
+            // const sortedArray = bubbleSort(arr);
+            // return sortedArray[nth - 1];
+            return bubbleSort(arr)[nth - 1];
+        }
+
+        console.log(getNthSmallestElementFromAnArray(arr, 2));
+        
+        /* bele lehet még írni egy feltételvizsgálatot, hogy ha nincs 
+        olyan eleme a tömbnek amilyet keresünk (pl. 10. legkisebb 
+        eleme egy 5 elemű tömbnek), akkor adja vissza a legnagyobb
+        elemet, mert az lesz az utolsó legkisebb elem. */
+
+    </script>
+
+</body>
+</html> 
