@@ -23,22 +23,38 @@
         const arr2 = [10, 20, 30, 60, 80, 90, 100];
 
         function union(arr1, arr2) {
-            let result2 = [];
-            let temp = [];
-            for (let i = 0; i < arr1.length; i += 1) {
-                temp[arr1[i]] = true;
+            const union = [];
+            for (let i=0; i < arr1.length; i+=1) {
+                if (union.indexOf(arr1[i]) === -1) {
+                    union.push(arr1[i]);
+                }
+                if (union.indexOf(arr2[i]) === -1) {
+                    union.push(arr2[i]);
+                }
             }
-            for (let j = 0; j < arr2.length; j += 1) {
-                temp[arr2[j]] = true;
-            }
-            for (let x in temp) {
-                result2.push(parseInt(x));
-            }
-            return result2;
+            return union;
         }
+        
+        console.log(union(arr1, arr2));
+        
+        
+        // function union(arr1, arr2) {
+        //     let result2 = [];
+        //     let temp = [];
+        //     for (let i = 0; i < arr1.length; i += 1) {
+        //         temp[arr1[i]] = true;
+        //     }
+        //     for (let j = 0; j < arr2.length; j += 1) {
+        //         temp[arr2[j]] = true;
+        //     }
+        //     for (let x in temp) {
+        //         result2.push(parseInt(x));
+        //     }
+        //     return result2;
+        // }
 
-        let result2 = union(arr1, arr2);
-        console.log(result2);
+        // let result2 = union(arr1, arr2);
+        // console.log(result2);
 
     </script>
 

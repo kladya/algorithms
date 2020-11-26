@@ -43,6 +43,9 @@
         let notNumbers = filterByNotNumbers(sampleArray);
         console.log(notNumbers);
 
+        /* ez a fenti 2 fgv. filter methoddal csak 1-1 sor */
+
+
         function bubbleSortDesc(numbers) {
             let swapped;
             do {
@@ -62,11 +65,15 @@
         let sortedArray = bubbleSortDesc(numbers);
         console.log(sortedArray);
 
+        // function sort(sampleArray) {
+        //     const numbers = filterByNumbers(sampleArray);
+        //     const notNumbers = filterByNotNumbers(sampleArray);
+        //     const sortedArray = bubbleSortDesc(numbers);
+        //     return sortedArray.concat(notNumbers);
+        // }
+
         function sort(sampleArray) {
-            const numbers = filterByNumbers(sampleArray);
-            const notNumbers = filterByNotNumbers(sampleArray);
-            const sortedArray = bubbleSortDesc(numbers);
-            return sortedArray.concat(notNumbers);
+            return bubbleSortDesc(filterByNumbers(sampleArray)).concat(filterByNotNumbers(sampleArray));
         }
 
         console.log(sort(sampleArray));

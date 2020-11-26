@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="js/bubbleSortAsc.js"></script> 
+    <!-- ide be lehetne szúrni, ha lenne külön ilyen js fájlom
+            mögé pedig 2. script taggel a mostani js fájlt -->
+
+    <script>
+        'use strict';
+
+        /* 13. Adott egy tetszőleges elemszámú, csak egész számokat 
+        tartalmazó tömb. A tömb elemeit rendezzük növekvő sorrendbe.
+        Ezután a felhasználótól kérjünk be egy számot (addig kérjünk 
+        be értéket, míg valóban egy véges egész számot ad meg). A 
+        számot szúrjuk be a tömbbe úgy, hogy a tömb továbbra is 
+        rendezett maradjon, tehát a megfelelő indexű helyre kerüljön 
+        be a plusz elem. Írasd ki a rendezett tömböt! */
+
+        const sampleArray = [6, 9, 3, 8, 4, 10, 5];
+
+        /* bekérünk egy számot: */
+        function inputNumericData() {
+            let number;
+            do {
+                number = parseInt(prompt('Adj meg egy számot!'), 10);
+            }
+            while (Number.isNaN(number) || number === Number.POSITIVE_INFINITY || number === Number. NEGATIVE_INFINITY)
+            return number;
+        }
+
+        function bubbleSortAsc(sampleArray) {
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 0; i < sampleArray.length - 1; i += 1) {
+                    if (sampleArray[i] > sampleArray[i + 1]) {
+                        let temp = sampleArray[i];
+                        sampleArray[i] = sampleArray[i + 1];
+                        sampleArray[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+            return sampleArray;
+        }
+    
+        
+
+        function insertionSort(sampleArray) {
+            const sortedArray = bubbleSortAsc(sampleArray);
+            const number = inputNumericData();
+            for (let i=0; i < sortedArray.length; i += 1) {
+                if (sortedArray[i] > number) {
+                    sortedArray.splice(i, 0, number);
+                    return sortedArray;
+                } 
+            }
+        }
+    
+        console.log(insertionSort(sampleArray));
+
+    </script>
+
+</body>
+</html>
